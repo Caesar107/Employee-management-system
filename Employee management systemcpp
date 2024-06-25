@@ -8,32 +8,32 @@
 #include<fstream>
 using namespace std;
 
-string name;//ĞÕÃû
-bool sex;//ĞÔ±ğ  1---ÄĞ  0----Å®
+string name;//å§“å
+bool sex;//æ€§åˆ«  1---ç”·  0----å¥³
 string SEX;
-long long jobNumber;//¹¤ºÅ
-long long phoneNumber;//µç»°ºÅÂë
-string department;//ËùÔÚ²¿ÃÅ¿ÆÊÒ
-string title;//Ö°³Æ
-int levelOftitle;//Ö°³ÆµÈ¼¶
+long long jobNumber;//å·¥å·
+long long phoneNumber;//ç”µè¯å·ç 
+string department;//æ‰€åœ¨éƒ¨é—¨ç§‘å®¤
+string title;//èŒç§°
+int levelOftitle;//èŒç§°ç­‰çº§
 int main()
 {
-	//¶ÁÈëÎÄ¼ş
+	//è¯»å…¥æ–‡ä»¶
 	ifstream inData("data.txt");
-	employee x;//x×÷ÎªÁ´±íµÄÄ©Î»µã
+	employee x;//xä½œä¸ºé“¾è¡¨çš„æœ«ä½ç‚¹
 	empNode* empList = NULL; empList = new empNode(x, NULL);
-	//½«ÎÄ¼şÄÚÈİĞ´ÈëÁ´±í
+	//å°†æ–‡ä»¶å†…å®¹å†™å…¥é“¾è¡¨
 	while (inData >> name >> sex >> jobNumber >> phoneNumber >> department >> title >> levelOftitle)
 	{
 		employee employ(name, sex, jobNumber, phoneNumber, department, title);
 		empList = new empNode(employ, empList);
 	}
-	//¿ª³¡Ğ¡¶¯»­
+	//å¼€åœºå°åŠ¨ç”»
 	if (1)
 	{
 		for (int i = 0; i < 2; i++)
 		{
-			cout << "          »¶Ó­          " << endl;;
+			cout << "          æ¬¢è¿          " << endl;;
 			for (int j = 0; j < 10; j++)
 			{
 				cout << ">>>";
@@ -42,58 +42,58 @@ int main()
 			system("cls");
 		}
 	}
-	//ÇåÆÁ
+	//æ¸…å±
 	system("cls");
-	//signal1×÷ÎªÒ»¼¶²Ëµ¥µÄÑ¡ÔñĞÅºÅ
+	//signal1ä½œä¸ºä¸€çº§èœå•çš„é€‰æ‹©ä¿¡å·
 	int signal1 = 0;
 	while (signal1 != -1)
 	{
-		//»Øµ½Ò»¼¶²Ëµ¥ºó¸´Î»¶ş¼¶²Ëµ¥ĞÅºÅÑ¡Ôñ
+		//å›åˆ°ä¸€çº§èœå•åå¤ä½äºŒçº§èœå•ä¿¡å·é€‰æ‹©
 		int signal2 = 0;
 		system("cls");
-		cout << " --------------½ÌÖ°¹¤ĞÅÏ¢¹ÜÀíÏµÍ³--------------\n";
-		cout << "|      1.Ìí¼Ó½ÌÖ°¹¤                            |" << endl;
-		cout << "|      2.²éÑ¯                                  |" << endl;
-		cout << "|      3.ĞŞ¸Ä                                  |" << endl;
-		cout << "|      4.°´Ö°³ÆÅÅĞòÊä³ö                        |" << endl;
-		cout << "|      5.É¾³ı								    |" << endl;
+		cout << " --------------æ•™èŒå·¥ä¿¡æ¯ç®¡ç†ç³»ç»Ÿ--------------\n";
+		cout << "|      1.æ·»åŠ æ•™èŒå·¥                            |" << endl;
+		cout << "|      2.æŸ¥è¯¢                                  |" << endl;
+		cout << "|      3.ä¿®æ”¹                                  |" << endl;
+		cout << "|      4.æŒ‰èŒç§°æ’åºè¾“å‡º                        |" << endl;
+		cout << "|      5.åˆ é™¤								    |" << endl;
 		cout << " ----------------------------------------------\n";
-		cout << "ÇëÑ¡Ôñ£¨1/2/3/4/5,ÊäÈë-1±£´æ²¢ÍË³ö£©£º" << endl;
-		//·Ç·¨×Ö·ûÊäÈë¹ıÂË
+		cout << "è¯·é€‰æ‹©ï¼ˆ1/2/3/4/5,è¾“å…¥-1ä¿å­˜å¹¶é€€å‡ºï¼‰ï¼š" << endl;
+		//éæ³•å­—ç¬¦è¾“å…¥è¿‡æ»¤
 		while (!(cin >> signal1))
 		{
 			cin.clear();
 			cin.ignore();
-			cout << "ÇëÑ¡Ôñ£¨1/2/3/4/5,ÊäÈë-1±£´æ²¢ÍË³ö£©£º" << endl;
+			cout << "è¯·é€‰æ‹©ï¼ˆ1/2/3/4/5,è¾“å…¥-1ä¿å­˜å¹¶é€€å‡ºï¼‰ï¼š" << endl;
 
 		}
 		system("cls");
-		employee tmp;//ÁÙÊ±±äÁ¿
+		employee tmp;//ä¸´æ—¶å˜é‡
 		switch (signal1)
 		{
 		case 1:
-			cout << "ÇëÊäÈë½ÌÖ°¹¤ĞÅÏ¢" << endl;
+			cout << "è¯·è¾“å…¥æ•™èŒå·¥ä¿¡æ¯" << endl;
 			tmp.setAllFromeCin();
 			empList = new empNode(tmp, empList);
-			cout << "ĞÅÏ¢Ìí¼Ó³É¹¦!!!" << endl;
+			cout << "ä¿¡æ¯æ·»åŠ æˆåŠŸ!!!" << endl;
 			Sleep(2000);
 			break;
 		case 2:
 			while (signal2 != -1)
 			{
 				system("cls");
-				cout << " --------------ÇëÑ¡Ôñ²éÕÒÌõ¼ş------------------\n";
-				cout << "|      1.¹¤ºÅ                                  |" << endl;
-				cout << "|      2.ĞÕÃû                                  |" << endl;
-				cout << "|      3.¿ÆÊÒ                                  |" << endl;
-				cout << "|      4.Ö°³Æ								    |" << endl;
-				cout << "|      5.Í³¼Æ(ÏÔÊ¾¸÷¸ö¿ÆÊÒÈËÊı,¸÷Ö°³ÆÈËÊı)     |" << endl;
+				cout << " --------------è¯·é€‰æ‹©æŸ¥æ‰¾æ¡ä»¶------------------\n";
+				cout << "|      1.å·¥å·                                  |" << endl;
+				cout << "|      2.å§“å                                  |" << endl;
+				cout << "|      3.ç§‘å®¤                                  |" << endl;
+				cout << "|      4.èŒç§°								    |" << endl;
+				cout << "|      5.ç»Ÿè®¡(æ˜¾ç¤ºå„ä¸ªç§‘å®¤äººæ•°,å„èŒç§°äººæ•°)     |" << endl;
 				cout << " ----------------------------------------------\n";
-				cout << "ÇëÑ¡Ôñ£¨1/2/3/4,ÊäÈë-1·µ»ØÉÏ¼¶£©£º" << endl;
-				//ÊäÈë¹ıÂË
+				cout << "è¯·é€‰æ‹©ï¼ˆ1/2/3/4,è¾“å…¥-1è¿”å›ä¸Šçº§ï¼‰ï¼š" << endl;
+				//è¾“å…¥è¿‡æ»¤
 				while (!(cin >> signal2))
 				{
-					cout << "ÇëÊäÈëºÏ·¨×Ö·û" << endl;
+					cout << "è¯·è¾“å…¥åˆæ³•å­—ç¬¦" << endl;
 					cin.clear();
 					cin.ignore();
 				}
@@ -101,40 +101,40 @@ int main()
 				switch (signal2)
 				{
 				case 1:
-					cout << "ÇëÊäÈë¹¤ºÅ" << endl;
+					cout << "è¯·è¾“å…¥å·¥å·" << endl;
 					while (!(cin >> jobNumber))
 					{
-						cout << "ÇëÊäÈëºÏ·¨×Ö·û" << endl;
+						cout << "è¯·è¾“å…¥åˆæ³•å­—ç¬¦" << endl;
 						cin.clear();
 						cin.ignore();
 					}
 					empList->findJobNumber(jobNumber);
-					cout << "°´ÈÎÒâ¼ü¼ÌĞø" << endl;
+					cout << "æŒ‰ä»»æ„é”®ç»§ç»­" << endl;
 					cin.get();
 					cin.get();
 
 					break;
 				case 2:
-					cout << "ÇëÊäÈëĞÕÃû" << endl;
+					cout << "è¯·è¾“å…¥å§“å" << endl;
 					cin >> name;
 					empList->findName(name);
-					cout << "°´ÈÎÒâ¼ü¼ÌĞø" << endl;
+					cout << "æŒ‰ä»»æ„é”®ç»§ç»­" << endl;
 					cin.get();
 					cin.get();
 					break;
 				case 3:
-					cout << "ÇëÊäÈë¿ÆÊÒ" << endl;
+					cout << "è¯·è¾“å…¥ç§‘å®¤" << endl;
 					cin >> department;
 					empList->findDepartment(department);
-					cout << "°´ÈÎÒâ¼ü¼ÌĞø" << endl;
+					cout << "æŒ‰ä»»æ„é”®ç»§ç»­" << endl;
 					cin.get();
 					cin.get();
 					break;
 				case 4:
-					cout << "ÇëÊäÈëÖ°³Æ" << endl;
+					cout << "è¯·è¾“å…¥èŒç§°" << endl;
 					cin >> title;
 					empList->findTitle(title);
-					cout << "°´ÈÎÒâ¼ü¼ÌĞø" << endl;
+					cout << "æŒ‰ä»»æ„é”®ç»§ç»­" << endl;
 					cin.get();
 					cin.get();
 					break;
@@ -148,30 +148,30 @@ int main()
 			}
 			break;
 		case 3:
-			cout << "ÇëÊäÈëĞèÒªĞŞ¸ÄµÄ¹¤ºÅ" << endl;
+			cout << "è¯·è¾“å…¥éœ€è¦ä¿®æ”¹çš„å·¥å·" << endl;
 			while (!(cin >> jobNumber))
 			{
-				cout << "ÇëÊäÈëºÏ·¨×Ö·û" << endl;
+				cout << "è¯·è¾“å…¥åˆæ³•å­—ç¬¦" << endl;
 				cin.clear();
 				cin.ignore();
 			}
 			empList->change(jobNumber);
-			cout << "°´ÈÎÒâ¼ü¼ÌĞø" << endl;
+			cout << "æŒ‰ä»»æ„é”®ç»§ç»­" << endl;
 			cin.get();
 			cin.get();
 			break;
 		case 4:
 			empList->paixushuchu();
-			cout << "°´ÈÎÒâ¼ü¼ÌĞø" << endl;
+			cout << "æŒ‰ä»»æ„é”®ç»§ç»­" << endl;
 			cin.get();
 			cin.get();
 			break;
 		case 5:
-			cout << "ÇëÊäÈëÏëÒªÉ¾³ıµÄ¹¤ºÅ" << endl;
-			//ÊäÈë¹ıÂË
+			cout << "è¯·è¾“å…¥æƒ³è¦åˆ é™¤çš„å·¥å·" << endl;
+			//è¾“å…¥è¿‡æ»¤
 			while (!(cin >> jobNumber))
 			{
-				cout << "ÇëÊäÈëºÏ·¨×Ö·û" << endl;
+				cout << "è¯·è¾“å…¥åˆæ³•å­—ç¬¦" << endl;
 				cin.clear();
 				cin.ignore();
 			}
@@ -181,16 +181,16 @@ int main()
 				string confirm;
 				do
 				{
-					cout << "È·ÈÏÉ¾³ı?(Y/N)" << endl;
+					cout << "ç¡®è®¤åˆ é™¤?(Y/N)" << endl;
 					cin >> confirm;
 					if (confirm == "Y")
 					{
 						empList = empList->next;
-						cout << "³É¹¦É¾³ı :)" << endl;
+						cout << "æˆåŠŸåˆ é™¤ :)" << endl;
 					}
 					else if (confirm == "N")
 					{
-						cout << "ÒÑ¾­È¡ÏûÉ¾³ı" << endl;
+						cout << "å·²ç»å–æ¶ˆåˆ é™¤" << endl;
 					}
 				} while (confirm != "Y" && confirm != "N");
 			}
@@ -206,15 +206,15 @@ int main()
 	}
 
 	/*
-	Ğ´ÈëÁ´±íÎÄ¼ş
+	å†™å…¥é“¾è¡¨æ–‡ä»¶
 	*/
 	empList->write();
-	//½áÊø½çÃæ
+	//ç»“æŸç•Œé¢
 	if (1)
 	{
 		for (int i = 0; i < 1; i++)
 		{
-			cout << "         Ğ»Ğ»Ê¹ÓÃ         " << endl;;
+			cout << "         è°¢è°¢ä½¿ç”¨         " << endl;;
 			for (int j = 0; j < 10; j++)
 			{
 				cout << "<<<";
